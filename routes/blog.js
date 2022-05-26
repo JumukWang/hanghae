@@ -17,7 +17,7 @@ router.get('/', async (req, res, next) => {
 router.get('/:username', async (req, res, next) => {
     const {username} = req.params;
     try{
-        const blogs = await blog.findOne({ _id: username});
+        const blogs = await blog.findOne({username});
         return res.send({ blogs })
     }catch{
         console.log(err);
@@ -27,7 +27,7 @@ router.get('/:username', async (req, res, next) => {
 router.get('/:title', async (req, res, next) => {
     const {title} = req.params;
     try{
-        const blogs = await blog.findOne({_id: title});
+        const blogs = await blog.findOne({title});
         return res.send({ blogs })
     }catch{
         console.log(err);
@@ -50,8 +50,8 @@ router.post('/text', async (req, res, next) => {
 router.put('/update:password', async (req, res, next) => {
     try{
         const {password} = req.params;
-        let {title, username, text} = req.body
-        const blogs = await blog.findOne(password);
+        const {title, username, text} = req.body
+        const blogs = await blog.findByIdAndUpdate(password, { $set: {title, username, text}});
         await blog.updateOne({title, username, text});
         return res.send({text})
     }catch(err){
