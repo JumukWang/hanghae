@@ -1,0 +1,33 @@
+{
+  "name": "blogandlogin",
+  "version": "1.0.0",
+  "description": "blog login and comment",
+  "main": "app.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon app"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JumukWang/hanghae.git"
+  },
+  "author": "jung ohhyeon",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/JumukWang/hanghae/issues"
+  },
+  "homepage": "https://github.com/JumukWang/hanghae#readme",
+  "dependencies": {
+    "bcrypt": "^5.0.1",
+    "cors": "^2.8.5",
+    "express": "^4.18.1",
+    "express-validator": "^6.14.1",
+    "helmet": "^5.1.0",
+    "jsonwebtoken": "^8.5.1",
+    "morgan": "^1.10.0"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.16"
+  }
+}
